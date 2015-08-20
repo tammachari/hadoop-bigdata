@@ -2,9 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.alg.mapred</groupId>
-	<artifactId>join</artifactId>
-	<version>0.0.1</version>
-
+	<artifactId>aggregator</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<repositories>
 		<repository>
@@ -28,30 +27,17 @@
 		</dependency>
 
 	</dependencies>
+
 	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
-					<artifactId>maven-assembly-plugin</artifactId>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
-						<archive>
-							<manifest>
-								<mainClass>com.alg.mapred.join.JoinJob</mainClass>
-							</manifest>
-						</archive>
-						<descriptorRefs>
-							<descriptorRef>jar-with-dependencies</descriptorRef>
-						</descriptorRefs>
+						<source>1.6</source>
+						<target>1.6</target>
 					</configuration>
-					<executions>
-						<execution>
-							<id>make-assembly</id> <!-- this is used for inheritance merges -->
-							<phase>package</phase> <!-- bind to the packaging phase -->
-							<goals>
-								<goal>single</goal>
-							</goals>
-						</execution>
-					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>

@@ -1,6 +1,5 @@
 package com.alg.mapred.wordcount;
 
-import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -11,8 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class WordCountJob {
 
 	public static void main(String[] args) throws Exception {
-		Configuration conf = new Configuration();
-		Job job = new Job(conf, "WordCount");
+		Job job = Job.getInstance();
 		job.setJarByClass(WordCountJob.class);
 		job.setMapperClass(WordCountMapper.class);
 		job.setReducerClass(WordCountReducer.class);
